@@ -1,0 +1,80 @@
+@import "reset";
+@import "base";
+@import "mixins";
+
+$outer-box-color: royalblue;
+$inner-box-color: indigo;
+
+body {
+  @include flex-container(center, center, column);
+
+  background-color: papayawhip;
+  // user-select: none;
+  perspective: 500px;
+
+  .header {
+    margin-bottom: 30px;
+    margin-top: -100px;
+    cursor: pointer;
+    color: lighten(indigo, 10%);
+    text-shadow: 0px 0px 5px deeppink;
+    transition: text-shadow 300ms, color 300ms;
+    &:hover {
+      text-shadow: 0px 0px 15px skyblue;
+      color: $outer-box-color;
+    }
+  }
+  .subtitle {
+    font-size: 3rem;
+    color: slateblue;
+    font-weight: 400;
+    margin-bottom: 6.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    cursor: pointer;
+  }
+  .wrapper {
+    box-shadow: 0 10px 80px #888888;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 530px;
+    height: 530px;
+    border: 15px solid $outer-box-color;
+    background: lighten($outer-box-color, 10%);
+    transition: transform 300ms cubic-bezier(0, 0, 0.4, 0.9);
+
+    // &:hover {
+    //   transform: rotateX(-15deg);
+    // }
+
+    @include flex-container(flex-start, flex-start);
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    .box {
+      @include flex-container(center, center);
+
+      background: orange;
+      border: dashed whitesmoke 1px;
+      color: white;
+      font-size: 3.2rem;
+      cursor: pointer;
+      width: 100px;
+      height: 100px;
+      position: relative;
+
+      // animation props go here...
+      //------------------------------
+
+      // &:hover {
+
+      // }
+    }
+  }
+}
+
+@keyframes moveBox {
+}
+
+@keyframes some-other-animation {
+}
